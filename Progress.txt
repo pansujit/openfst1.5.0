@@ -1,0 +1,243 @@
+Compiling the OpenFST 1.5.0 on windows
+
+--------------> Compilation of OPENFST 1.5.0 on WINDWOS---------->
+
+Changes:
+
+changed in config.h to supress many warnings.
+
+changed in flag.h from line 33
+
+#ifdef _MSC_VER //Added Paul Dixon 04/09/10
+#define strtoll _strtoi64
+#define atoll atol
+#ifdef OPENFSTEXPORT
+#define  OPENFSTDLL  __declspec(dllexport) 
+#else
+#define  OPENFSTDLL __declspec(dllimport)
+#endif
+#else
+#define OPENFSTDLL  
+#endif
+
+
+changes all made given from paul dixon 
+----
+OpenFst 1.2 for Windows/Visual Studio
+Paul Dixon (paul@edobashira.com)
+
+A modified version of OpenFst 1.2.3 for compilation on Windows using Visual Studio
+
+REQUIREMENTS:
+  This version is known to work under Windows 7 and compile with Visual Studio 2010 Professional or better.
+  	
+INSTALLATION:
+	Unzip the archive, open the solution file in Visual Studio and compile.
+
+USAGE:
+	In the solution root the binaries should be in either the Debug or Release directories 
+	depending on which versions were compiled.
+
+HISTORY
+07/12/2010
+Updated to version 1.2.6
+
+Fixed a bug in fstdraw
+Added fstsymbols command
+Added newer pdt commands
+
+18/09/2010
+Updated to version 1.2.3 
+Added far 32bit fix
+
+05/09/2010
+Version 1.2.2
+
+TODO:
+Add 64bit support
+
+Acknowledgements
+Micheal Riley and the OpenFst developers, Daniel Povey
+
+CHANGES
+
+Changed config.h to Windows suitable defines and to switch off many
+compiler warnings
+
+compat.h:47 added the conditional compilation
+#ifdef WINDOWS
+#include <BaseTsd.h>
+typedef SSIZE_T ssize_t;
+#define snprintf _snprintf
+#define strtoll _strtoi64
+#else
+#include <dlfcn.h>
+#endif
+
+Added files <tr1/unordered_map> and #include <fst/unordered_map.h>
+Changed all occurrences off #include <tr1/unordered_map> to #include
+<fst/unordered_map.h>
+
+Changed all occurrences off #include <tr1/unordered_set> to #include
+<fst/unordered_set.h>
+
+generic-register.h:77 Added conditional compilation of the dl calls
+
+replace.h:1041 added conditional compilation of correct template
+keyword to make VS happy
+
+Added to flags.h:32 
+#ifdef WINDOWS
+#define strtoll _strtoi64
+#endif
+
+far/compile-strings.h:23 Added
+#ifndef WINDOWS
+#include <libgen.h>
+#endif
+
+far.create.h:28 Added
+#ifndef WINDOWS
+#include <libgen.h>
+#endif
+
+far/main.h Added
+#ifdef WINDOWS
+const char kFileSeperator = '\\';
+std::string basename(const std::string &filename);
+#endif
+
+far/main.cc:110 Added
+#ifdef WINDOWS
+std::string basename(const std::string &filename) {
+ size_t p = filename.find_last_of(kFileSeperator);
+ return p == string::npos ? filename
+               : filename.substr(p + 1, filename.size() - p);
+}
+#endif
+
+far/info.h and compile-strings.cc
+Added casts for all the log10 calls e.g. log10((float)info.nstate)
+Visual studio was complaining about an ambiguity between float an
+double  overloads
+
+To switch the std in/out to binary
+flags.cc:25 Added
+#ifdef WINDOWS
+#include <io.h>
+#include <fcntl.h>
+#endif
+
+flags.cc:39  Added
+#ifdef WINDOWS
+_setmode(_fileno(stdin),_O_BINARY);
+_setmode(_fileno(stdout),_O_BINARY);
+#endif
+---
+
+changes made for the user macro for the following files
+arcsoft.h
+closure.h 
+compat.h
+compile.h
+compose.h
+concat.h
+connect.h
+convert.h
+decode.h
+determinize.h
+difference.h
+disambiguate.h
+draw.h
+encode.h
+epsnormalize.h
+equal.h
+equivalent.h
+farscript.h
+flags.h
+fst.h
+fst-class.h
+generic-register.h
+info.h
+intersect.h
+invert.h
+linearscript.h
+main.h
+map.h
+mapped-file.h
+matcher-fst.h
+minimize.h
+pdtscript.h
+print.h
+project.h
+properties.h
+prune.h
+
+push.h
+randequivalen.h
+randgen.h
+relabel.h
+replace.h
+reverse.h
+reweight.h
+rmepsilon.h
+shortest-distance.h
+shortest-path.h
+stlist.h
+sstable.h
+symbol-table.cc
+symbol-table.h
+synchronize.h
+text-io.h
+topsort.h
+union.h
+util.h
+verify.h
+weight-class.h
+
+the src/extension/compress folder is removed.
+Because it is throwing an error "Cannot evalute a constant" even after including
+header file "zlib.h", "zconf" and zlib1.dll 
+
+Extension pyhton also removed.
+
+In "openfst.def", export definition file, the property name changed
+to "DATA".
+
+test is failed due to the linking error lnk2019 and lnk2001
+ 
+ 1>------ Build started: Project: algotest, Configuration: Debug Win32 ------
+2>------ Build started: Project: fst_test, Configuration: Debug Win32 ------
+3>------ Build started: Project: weight_test, Configuration: Debug Win32 ------
+3>C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\fst_test\fst_test.vcxproj(103,3): warning MSB4011: "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.props" cannot be imported again. It was already imported at "C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\fst_test\fst_test.vcxproj (70,3)". This is most likely a build authoring error. This subsequent import will be ignored.
+2>C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\fst_test\fst_test.vcxproj(103,3): warning MSB4011: "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.props" cannot be imported again. It was already imported at "C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\fst_test\fst_test.vcxproj (70,3)". This is most likely a build authoring error. This subsequent import will be ignored.
+1>C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\fst_test\fst_test.vcxproj(103,3): warning MSB4011: "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.props" cannot be imported again. It was already imported at "C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\fst_test\fst_test.vcxproj (70,3)". This is most likely a build authoring error. This subsequent import will be ignored.
+1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
+1>algo_test.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+2>fst_test.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+3>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
+3>weight_test.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+3>     Creating library C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\Debug\weight_test.lib and object C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\Debug\weight_test.exp
+1>     Creating library C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\Debug\algotest.lib and object C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\Debug\algotest.exp
+3>weight_test.obj : error LNK2019: unresolved external symbol "void __cdecl SetFlags(char const *,int *,char * * *,bool,char const *)" (?SetFlags@@YAXPBDPAHPAPAPAD_N0@Z) referenced in function _main
+3>weight_test.obj : error LNK2019: unresolved external symbol "void __cdecl FailedNewHandler(void)" (?FailedNewHandler@@YAXXZ) referenced in function _main
+3>weight_test.obj : error LNK2019: unresolved external symbol "void __cdecl fst::Int64ToStr(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > *)" (?Int64ToStr@fst@@YAX_JPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "protected: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl fst::FloatWeightTpl<float>::GetPrecisionString(void)" (?GetPrecisionString@?$FloatWeightTpl@M@fst@@KA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ)
+3>weight_test.obj : error LNK2001: unresolved external symbol "int FLAGS_v" (?FLAGS_v@@3HA)
+3>weight_test.obj : error LNK2001: unresolved external symbol "bool FLAGS_fst_error_fatal" (?FLAGS_fst_error_fatal@@3_NA)
+3>weight_test.obj : error LNK2001: unresolved external symbol "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > FLAGS_fst_weight_parentheses" (?FLAGS_fst_weight_parentheses@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A)
+3>weight_test.obj : error LNK2001: unresolved external symbol "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > FLAGS_fst_weight_separator" (?FLAGS_fst_weight_separator@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A)
+3>C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\Debug\weight_test.exe : warning LNK4088: image being generated due to /FORCE option; image may not run
+2>fst_test.obj : error LNK2019: unresolved external symbol "public: static enum fst::FstReadOptions::FileReadMode __cdecl fst::FstReadOptions::ReadMode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?ReadMode@FstReadOptions@fst@@SA?AW4FileReadMode@12@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "public: void __thiscall fst::FstTester<class fst::CompactFst<struct fst::CustomArc,class fst::CustomCompactor<struct fst::CustomArc>,unsigned int,class fst::DefaultCompactStore<struct std::pair<short,class fst::ProductWeight<class fst::TropicalWeightTpl<float>,class fst::LogWeightTpl<float> > >,unsigned int> > >::TestIO<class fst::CompactFst<struct fst::CustomArc,class fst::CustomCompactor<struct fst::CustomArc>,unsigned int,class fst::DefaultCompactStore<struct std::pair<short,class fst::ProductWeight<class fst::TropicalWeightTpl<float>,class fst::LogWeightTpl<float> > >,unsigned int> > >(class fst::CompactFst<struct fst::CustomArc,class fst::CustomCompactor<struct fst::CustomArc>,unsigned int,class fst::DefaultCompactStore<struct std::pair<short,class fst::ProductWeight<class fst::TropicalWeightTpl<float>,class fst::LogWeightTpl<float> > >,unsigned int> > const &)const " (??$TestIO@V?$CompactFst@UCustomArc@fst@@V?$CustomCompactor@UCustomArc@fst@@@2@IV?$DefaultCompactStore@U?$pair@FV?$ProductWeight@V?$TropicalWeightTpl@M@fst@@V?$LogWeightTpl@M@2@@fst@@@std@@I@2@@fst@@@?$FstTester@V?$CompactFst@UCustomArc@fst@@V?$CustomCompactor@UCustomArc@fst@@@2@IV?$DefaultCompactStore@U?$pair@FV?$ProductWeight@V?$TropicalWeightTpl@M@fst@@V?$LogWeightTpl@M@2@@fst@@@std@@I@2@@fst@@@fst@@QBEXABV?$CompactFst@UCustomArc@fst@@V?$CustomCompactor@UCustomArc@fst@@@2@IV?$DefaultCompactStore@U?$pair@FV?$ProductWeight@V?$TropicalWeightTpl@M@fst@@V?$LogWeightTpl@M@2@@fst@@@std@@I@2@@1@@Z)
+2>fst_test.obj : error LNK2019: unresolved external symbol "public: static class fst::MappedFile * __cdecl fst::MappedFile::Map(class std::basic_istream<char,struct std::char_traits<char> > *,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,unsigned int)" (?Map@MappedFile@fst@@SAPAV12@PAV?$basic_istream@DU?$char_traits@D@std@@@std@@_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@I@Z) referenced in function "public: static class fst::DefaultCompactStore<struct std::pair<short,class fst::ProductWeight<class fst::TropicalWeightTpl<float>,class fst::LogWeightTpl<float> > >,unsigned int> * __cdecl fst::DefaultCompactStore<struct std::pair<short,class fst::ProductWeight<class fst::TropicalWeightTpl<float>,class fst::LogWeightTpl<float> > >,unsigned int>::Read<class fst::CustomCompactor<struct fst::CustomArc> >(class std::basic_istream<char,struct std::char_traits<char> > &,struct fst::FstReadOptions const &,class fst::FstHeader const &,class fst::CustomCompactor<struct fst::CustomArc> const &)" (??$Read@V?$CustomCompactor@UCustomArc@fst@@@fst@@@?$DefaultCompactStore@U?$pair@FV?$ProductWeight@V?$TropicalWeightTpl@M@fst@@V?$LogWeightTpl@M@2@@fst@@@std@@I@fst@@SAPAV01@AAV?$basic_istream@DU?$char_traits@D@std@@@std@@ABUFstReadOptions@1@ABVFstHeader@1@ABV?$CustomCompactor@UCustomArc@fst@@@1@@Z)
+2>fst_test.obj : error LNK2001: unresolved external symbol "char const * * fst::PropertyNames" (?PropertyNames@fst@@3PAPBDA)
+2>fst_test.obj : error LNK2001: unresolved external symbol "char const * const fst::arc_lookahead_fst_type" (?arc_lookahead_fst_type@fst@@3QBDB)
+2>fst_test.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) private: static int fst::GenericRegister<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct fst::FstRegisterEntry<struct fst::CustomArc>,class fst::FstRegister<struct fst::CustomArc> >::register_init_" (__imp_?register_init_@?$GenericRegister@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$FstRegisterEntry@UCustomArc@fst@@@fst@@V?$FstRegister@UCustomArc@fst@@@4@@fst@@0HA)
+2>fst_test.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) private: static class fst::Mutex * fst::GenericRegister<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct fst::FstRegisterEntry<struct fst::CustomArc>,class fst::FstRegister<struct fst::CustomArc> >::register_lock_" (__imp_?register_lock_@?$GenericRegister@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$FstRegisterEntry@UCustomArc@fst@@@fst@@V?$FstRegister@UCustomArc@fst@@@4@@fst@@0PAVMutex@2@A)
+2>fst_test.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) private: static class fst::FstRegister<struct fst::CustomArc> * fst::GenericRegister<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct fst::FstRegisterEntry<struct fst::CustomArc>,class fst::FstRegister<struct fst::CustomArc> >::register_" (__imp_?register_@?$GenericRegister@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$FstRegisterEntry@UCustomArc@fst@@@fst@@V?$FstRegister@UCustomArc@fst@@@4@@fst@@0PAV?$FstRegister@UCustomArc@fst@@@2@A)
+2>C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\Debug\fst_test.exe : fatal error LNK1120: 7 unresolved externals
+1>algo_test.obj : error LNK2019: unresolved external symbol "private: void __thiscall fst::SymbolTableImpl::MaybeRecomputeCheckSum(void)const " (?MaybeRecomputeCheckSum@SymbolTableImpl@fst@@ABEXXZ) referenced in function "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall fst::SymbolTableImpl::CheckSum(void)const " (?CheckSum@SymbolTableImpl@fst@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ)
+1>algo_test.obj : error LNK2001: unresolved external symbol "char const * * fst::PropertyNames" (?PropertyNames@fst@@3PAPBDA)
+1>C:\Users\sujit\Desktop\openfst1.5 - Copy\MSVC15\Debug\algotest.exe : warning LNK4088: image being generated due to /FORCE option; image may not run
+========== Build: 0 succeeded, 3 failed, 1 up-to-date, 0 skipped ==========
+
+And I couldn't trace out the problem.

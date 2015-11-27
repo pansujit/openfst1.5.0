@@ -1,0 +1,31 @@
+﻿openfst.def(3): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(4): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(5): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(6): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(7): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(8): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(9): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(10): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(11): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(12): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(13): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(14): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(15): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(16): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def(17): warning LNK4087: CONSTANT keyword is obsolete; use DATA
+openfst.def : error LNK2001: unresolved external symbol FLAGS_fst_align
+openfst.def : error LNK2001: unresolved external symbol FLAGS_fst_compat_symbols
+openfst.def : error LNK2001: unresolved external symbol FLAGS_fst_default_cache_gc
+openfst.def : error LNK2001: unresolved external symbol FLAGS_fst_default_cache_gc_limit
+openfst.def : error LNK2001: unresolved external symbol FLAGS_fst_error_fatal
+openfst.def : error LNK2001: unresolved external symbol FLAGS_fst_field_separator
+openfst.def : error LNK2001: unresolved external symbol FLAGS_fst_verify_properties
+openfst.def : error LNK2001: unresolved external symbol FLAGS_fst_weight_parentheses
+openfst.def : error LNK2001: unresolved external symbol FLAGS_fst_weight_separator
+openfst.def : error LNK2001: unresolved external symbol FLAGS_help
+openfst.def : error LNK2001: unresolved external symbol FLAGS_save_relabel_ipairs
+openfst.def : error LNK2001: unresolved external symbol FLAGS_save_relabel_opairs
+openfst.def : error LNK2001: unresolved external symbol FLAGS_tmpdir
+openfst.def : error LNK2001: unresolved external symbol FLAGS_v
+openfst.def : error LNK2001: unresolved external symbol PropertyNames
+C:\Users\sujit\Desktop\filetoSubmit\openfst-1.5.0\src\test\Debug\algotestt.lib : fatal error LNK1120: 15 unresolved externals

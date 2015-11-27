@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4E01BDB9-40A5-49B2-AA97-CA82CB3EEAD9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\bin\fstarcsort.cc" />
+    <ClCompile Include="src\bin\fstclosure.cc" />
+    <ClCompile Include="src\bin\fstcompile.cc" />
+    <ClCompile Include="src\bin\fstcompose.cc" />
+    <ClCompile Include="src\bin\fstconcat.cc" />
+    <ClCompile Include="src\bin\fstconnect.cc" />
+    <ClCompile Include="src\bin\fstconvert.cc" />
+    <ClCompile Include="src\bin\fstdeterminize.cc" />
+    <ClCompile Include="src\bin\fstdifference.cc" />
+    <ClCompile Include="src\bin\fstdisambiguate.cc" />
+    <ClCompile Include="src\bin\fstdraw.cc" />
+    <ClCompile Include="src\bin\fstencode.cc" />
+    <ClCompile Include="src\bin\fstepsnormalize.cc" />
+    <ClCompile Include="src\bin\fstequal.cc" />
+    <ClCompile Include="src\bin\fstequivalent.cc" />
+    <ClCompile Include="src\bin\fstinfo.cc" />
+    <ClCompile Include="src\bin\fstintersect.cc" />
+    <ClCompile Include="src\bin\fstinvert.cc" />
+    <ClCompile Include="src\bin\fstisomorphic.cc" />
+    <ClCompile Include="src\bin\fstmap.cc" />
+    <ClCompile Include="src\bin\fstminimize.cc" />
+    <ClCompile Include="src\bin\fstprint.cc" />
+    <ClCompile Include="src\bin\fstproject.cc" />
+    <ClCompile Include="src\bin\fstprune.cc" />
+    <ClCompile Include="src\bin\fstpush.cc" />
+    <ClCompile Include="src\bin\fstrandgen.cc" />
+    <ClCompile Include="src\bin\fstrelabel.cc" />
+    <ClCompile Include="src\bin\fstreplace.cc" />
+    <ClCompile Include="src\bin\fstreverse.cc" />
+    <ClCompile Include="src\bin\fstreweight.cc" />
+    <ClCompile Include="src\bin\fstrmepsilon.cc" />
+    <ClCompile Include="src\bin\fstshortestdistance.cc" />
+    <ClCompile Include="src\bin\fstshortestpath.cc" />
+    <ClCompile Include="src\bin\fstsymbols.cc" />
+    <ClCompile Include="src\bin\fstsynchronize.cc" />
+    <ClCompile Include="src\bin\fsttopsort.cc" />
+    <ClCompile Include="src\bin\fstunion.cc" />
+    <ClCompile Include="src\extensions\compact\compact16_acceptor-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact16_string-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact16_unweighted-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact16_unweighted_acceptor-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact16_weighted_string-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact64_acceptor-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact64_string-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact64_unweighted-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact64_unweighted_acceptor-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact64_weighted_string-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact8_acceptor-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact8_string-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact8_unweighted-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact8_unweighted_acceptor-fst.cc" />
+    <ClCompile Include="src\extensions\compact\compact8_weighted_string-fst.cc" />
+    <ClCompile Include="src\extensions\const\const16-fst.cc" />
+    <ClCompile Include="src\extensions\const\const64-fst.cc" />
+    <ClCompile Include="src\extensions\const\const8-fst.cc" />
+    <ClCompile Include="src\extensions\far\farcompilestrings.cc" />
+    <ClCompile Include="src\extensions\far\farcreate.cc" />
+    <ClCompile Include="src\extensions\far\farequal.cc" />
+    <ClCompile Include="src\extensions\far\farextract.cc" />
+    <ClCompile Include="src\extensions\far\farinfo.cc" />
+    <ClCompile Include="src\extensions\far\farisomorphic.cc" />
+    <ClCompile Include="src\extensions\far\farprintstrings.cc" />
+    <ClCompile Include="src\extensions\far\farscript.cc" />
+    <ClCompile Include="src\extensions\far\main.cc" />
+    <ClCompile Include="src\extensions\far\stlist.cc" />
+    <ClCompile Include="src\extensions\far\strings.cc" />
+    <ClCompile Include="src\extensions\far\sttable.cc" />
+    <ClCompile Include="src\extensions\linear\fstlinear.cc" />
+    <ClCompile Include="src\extensions\linear\fstloglinearapply.cc" />
+    <ClCompile Include="src\extensions\linear\linear-classifier-fst.cc" />
+    <ClCompile Include="src\extensions\linear\linear-tagger-fst.cc" />
+    <ClCompile Include="src\extensions\linear\linearscript.cc" />
+    <ClCompile Include="src\extensions\lookahead\arc_lookahead-fst.cc" />
+    <ClCompile Include="src\extensions\lookahead\ilabel_lookahead-fst.cc" />
+    <ClCompile Include="src\extensions\lookahead\olabel_lookahead-fst.cc" />
+    <ClCompile Include="src\extensions\mpdt\mpdtcompose.cc" />
+    <ClCompile Include="src\extensions\mpdt\mpdtexpand.cc" />
+    <ClCompile Include="src\extensions\mpdt\mpdtinfo.cc" />
+    <ClCompile Include="src\extensions\mpdt\mpdtreverse.cc" />
+    <ClCompile Include="src\extensions\mpdt\mpdtscript.cc" />
+    <ClCompile Include="src\extensions\ngram\bitmap-index.cc" />
+    <ClCompile Include="src\extensions\ngram\ngram-fst.cc" />
+    <ClCompile Include="src\extensions\ngram\nthbit.cc" />
+    <ClCompile Include="src\extensions\pdt\pdtcompose.cc" />
+    <ClCompile Include="src\extensions\pdt\pdtexpand.cc" />
+    <ClCompile Include="src\extensions\pdt\pdtinfo.cc" />
+    <ClCompile Include="src\extensions\pdt\pdtreplace.cc" />
+    <ClCompile Include="src\extensions\pdt\pdtreverse.cc" />
+    <ClCompile Include="src\extensions\pdt\pdtscript.cc" />
+    <ClCompile Include="src\extensions\pdt\pdtshortestpath.cc" />
+    <ClCompile Include="src\lib\compat.cc" />
+    <ClCompile Include="src\lib\flags.cc" />
+    <ClCompile Include="src\lib\fst.cc" />
+    <ClCompile Include="src\lib\mapped-file.cc" />
+    <ClCompile Include="src\lib\properties.cc" />
+    <ClCompile Include="src\lib\symbol-table-ops.cc" />
+    <ClCompile Include="src\lib\symbol-table.cc" />
+    <ClCompile Include="src\lib\util.cc" />
+    <ClCompile Include="src\script\arcsort.cc" />
+    <ClCompile Include="src\script\closure.cc" />
+    <ClCompile Include="src\script\compile.cc" />
+    <ClCompile Include="src\script\compose.cc" />
+    <ClCompile Include="src\script\concat.cc" />
+    <ClCompile Include="src\script\connect.cc" />
+    <ClCompile Include="src\script\convert.cc" />
+    <ClCompile Include="src\script\decode.cc" />
+    <ClCompile Include="src\script\determinize.cc" />
+    <ClCompile Include="src\script\difference.cc" />
+    <ClCompile Include="src\script\disambiguate.cc" />
+    <ClCompile Include="src\script\draw.cc" />
+    <ClCompile Include="src\script\encode.cc" />
+    <ClCompile Include="src\script\epsnormalize.cc" />
+    <ClCompile Include="src\script\equal.cc" />
+    <ClCompile Include="src\script\equivalent.cc" />
+    <ClCompile Include="src\script\fst-class.cc" />
+    <ClCompile Include="src\script\info.cc" />
+    <ClCompile Include="src\script\intersect.cc" />
+    <ClCompile Include="src\script\invert.cc" />
+    <ClCompile Include="src\script\isomorphic.cc" />
+    <ClCompile Include="src\script\map.cc" />
+    <ClCompile Include="src\script\minimize.cc" />
+    <ClCompile Include="src\script\print.cc" />
+    <ClCompile Include="src\script\project.cc" />
+    <ClCompile Include="src\script\prune.cc" />
+    <ClCompile Include="src\script\push.cc" />
+    <ClCompile Include="src\script\randequivalent.cc" />
+    <ClCompile Include="src\script\randgen.cc" />
+    <ClCompile Include="src\script\relabel.cc" />
+    <ClCompile Include="src\script\replace.cc" />
+    <ClCompile Include="src\script\reverse.cc" />
+    <ClCompile Include="src\script\reweight.cc" />
+    <ClCompile Include="src\script\rmepsilon.cc" />
+    <ClCompile Include="src\script\script-impl.cc" />
+    <ClCompile Include="src\script\shortest-distance.cc" />
+    <ClCompile Include="src\script\shortest-path.cc" />
+    <ClCompile Include="src\script\synchronize.cc" />
+    <ClCompile Include="src\script\text-io.cc" />
+    <ClCompile Include="src\script\topsort.cc" />
+    <ClCompile Include="src\script\union.cc" />
+    <ClCompile Include="src\script\verify.cc" />
+    <ClCompile Include="src\script\weight-class.cc" />
+    <ClCompile Include="src\test\algo_test.cc" />
+    <ClCompile Include="src\test\fst_test.cc" />
+    <ClCompile Include="src\test\weight_test.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\test\openfst.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\include\fst\accumulator.h" />
+    <ClInclude Include="src\include\fst\add-on.h" />
+    <ClInclude Include="src\include\fst\arc-map.h" />
+    <ClInclude Include="src\include\fst\arc.h" />
+    <ClInclude Include="src\include\fst\arcfilter.h" />
+    <ClInclude Include="src\include\fst\arcsort.h" />
+    <ClInclude Include="src\include\fst\bi-table.h" />
+    <ClInclude Include="src\include\fst\cache.h" />
+    <ClInclude Include="src\include\fst\closure.h" />
+    <ClInclude Include="src\include\fst\compact-fst.h" />
+    <ClInclude Include="src\include\fst\compat.h" />
+    <ClInclude Include="src\include\fst\complement.h" />
+    <ClInclude Include="src\include\fst\compose-filter.h" />
+    <ClInclude Include="src\include\fst\compose.h" />
+    <ClInclude Include="src\include\fst\concat.h" />
+    <ClInclude Include="src\include\fst\config.h" />
+    <ClInclude Include="src\include\fst\connect.h" />
+    <ClInclude Include="src\include\fst\const-fst.h" />
+    <ClInclude Include="src\include\fst\determinize.h" />
+    <ClInclude Include="src\include\fst\dfs-visit.h" />
+    <ClInclude Include="src\include\fst\difference.h" />
+    <ClInclude Include="src\include\fst\disambiguate.h" />
+    <ClInclude Include="src\include\fst\edit-fst.h" />
+    <ClInclude Include="src\include\fst\encode.h" />
+    <ClInclude Include="src\include\fst\epsnormalize.h" />
+    <ClInclude Include="src\include\fst\equal.h" />
+    <ClInclude Include="src\include\fst\equivalent.h" />
+    <ClInclude Include="src\include\fst\expanded-fst.h" />
+    <ClInclude Include="src\include\fst\expectation-weight.h" />
+    <ClInclude Include="src\include\fst\extensions\compress\compress-script.h" />
+    <ClInclude Include="src\include\fst\extensions\compress\compress.h" />
+    <ClInclude Include="src\include\fst\extensions\compress\elias.h" />
+    <ClInclude Include="src\include\fst\extensions\compress\fstgzfile.h" />
+    <ClInclude Include="src\include\fst\extensions\compress\randmod.h" />
+    <ClInclude Include="src\include\fst\extensions\far\compile-strings.h" />
+    <ClInclude Include="src\include\fst\extensions\far\create.h" />
+    <ClInclude Include="src\include\fst\extensions\far\equal.h" />
+    <ClInclude Include="src\include\fst\extensions\far\extract.h" />
+    <ClInclude Include="src\include\fst\extensions\far\far.h" />
+    <ClInclude Include="src\include\fst\extensions\far\farlib.h" />
+    <ClInclude Include="src\include\fst\extensions\far\farscript.h" />
+    <ClInclude Include="src\include\fst\extensions\far\info.h" />
+    <ClInclude Include="src\include\fst\extensions\far\isomorphic.h" />
+    <ClInclude Include="src\include\fst\extensions\far\main.h" />
+    <ClInclude Include="src\include\fst\extensions\far\print-strings.h" />
+    <ClInclude Include="src\include\fst\extensions\far\stlist.h" />
+    <ClInclude Include="src\include\fst\extensions\far\sttable.h" />
+    <ClInclude Include="src\include\fst\extensions\linear\linear-fst-data-builder.h" />
+    <ClInclude Include="src\include\fst\extensions\linear\linear-fst-data.h" />
+    <ClInclude Include="src\include\fst\extensions\linear\linear-fst.h" />
+    <ClInclude Include="src\include\fst\extensions\linear\linearscript.h" />
+    <ClInclude Include="src\include\fst\extensions\linear\loglinear-apply.h" />
+    <ClInclude Include="src\include\fst\extensions\linear\trie.h" />
+    <ClInclude Include="src\include\fst\extensions\mpdt\compose.h" />
+    <ClInclude Include="src\include\fst\extensions\mpdt\expand.h" />
+    <ClInclude Include="src\include\fst\extensions\mpdt\info.h" />
+    <ClInclude Include="src\include\fst\extensions\mpdt\mpdt.h" />
+    <ClInclude Include="src\include\fst\extensions\mpdt\mpdtscript.h" />
+    <ClInclude Include="src\include\fst\extensions\mpdt\read_write_utils.h" />
+    <ClInclude Include="src\include\fst\extensions\mpdt\reverse.h" />
+    <ClInclude Include="src\include\fst\extensions\ngram\bitmap-index.h" />
+    <ClInclude Include="src\include\fst\extensions\ngram\ngram-fst.h" />
+    <ClInclude Include="src\include\fst\extensions\ngram\nthbit.h" />
+    <ClInclude Include="src\include\fst\extensions\pdt\collection.h" />
+    <ClInclude Include="src\include\fst\extensions\pdt\compose.h" />
+    <ClInclude Include="src\include\fst\extensions\pdt\expand.h" />
+    <ClInclude Include="src\include\fst\extensions\pdt\info.h" />
+    <ClInclude Include="src\include\fst\extensions\pdt\paren.h" />
+    <ClInclude Include="src\include\fst\extensions\pdt\pdt.h" />
+    <ClInclude Include="src\include\fst\extensions\pdt\pdtlib.h" />
+    <ClInclude Include="src\include\fst\extensions\pdt\pdtscript.h" />
+    <ClInclude Include="src\include\fst\extensions\pdt\replace.h" />
+    <ClInclude Include="src\include\fst\extensions\pdt\reverse.h" />
+    <ClInclude Include="src\include\fst\extensions\pdt\shortest-path.h" />
+    <ClInclude Include="src\include\fst\factor-weight.h" />
+    <ClInclude Include="src\include\fst\filter-state.h" />
+    <ClInclude Include="src\include\fst\flags.h" />
+    <ClInclude Include="src\include\fst\float-weight.h" />
+    <ClInclude Include="src\include\fst\fst-decl.h" />
+    <ClInclude Include="src\include\fst\fst.h" />
+    <ClInclude Include="src\include\fst\fstlib.h" />
+    <ClInclude Include="src\include\fst\generic-register.h" />
+    <ClInclude Include="src\include\fst\heap.h" />
+    <ClInclude Include="src\include\fst\icu.h" />
+    <ClInclude Include="src\include\fst\intersect.h" />
+    <ClInclude Include="src\include\fst\interval-set.h" />
+    <ClInclude Include="src\include\fst\invert.h" />
+    <ClInclude Include="src\include\fst\isomorphic.h" />
+    <ClInclude Include="src\include\fst\label-reachable.h" />
+    <ClInclude Include="src\include\fst\lexicographic-weight.h" />
+    <ClInclude Include="src\include\fst\lock.h" />
+    <ClInclude Include="src\include\fst\log.h" />
+    <ClInclude Include="src\include\fst\lookahead-filter.h" />
+    <ClInclude Include="src\include\fst\lookahead-matcher.h" />
+    <ClInclude Include="src\include\fst\map.h" />
+    <ClInclude Include="src\include\fst\mapped-file.h" />
+    <ClInclude Include="src\include\fst\matcher-fst.h" />
+    <ClInclude Include="src\include\fst\matcher.h" />
+    <ClInclude Include="src\include\fst\memory.h" />
+    <ClInclude Include="src\include\fst\minimize.h" />
+    <ClInclude Include="src\include\fst\mutable-fst.h" />
+    <ClInclude Include="src\include\fst\pair-weight.h" />
+    <ClInclude Include="src\include\fst\partition.h" />
+    <ClInclude Include="src\include\fst\power-weight.h" />
+    <ClInclude Include="src\include\fst\product-weight.h" />
+    <ClInclude Include="src\include\fst\project.h" />
+    <ClInclude Include="src\include\fst\properties.h" />
+    <ClInclude Include="src\include\fst\prune.h" />
+    <ClInclude Include="src\include\fst\push.h" />
+    <ClInclude Include="src\include\fst\queue.h" />
+    <ClInclude Include="src\include\fst\randequivalent.h" />
+    <ClInclude Include="src\include\fst\randgen.h" />
+    <ClInclude Include="src\include\fst\random-weight.h" />
+    <ClInclude Include="src\include\fst\rational.h" />
+    <ClInclude Include="src\include\fst\register.h" />
+    <ClInclude Include="src\include\fst\relabel.h" />
+    <ClInclude Include="src\include\fst\replace-util.h" />
+    <ClInclude Include="src\include\fst\replace.h" />
+    <ClInclude Include="src\include\fst\reverse.h" />
+    <ClInclude Include="src\include\fst\reweight.h" />
+    <ClInclude Include="src\include\fst\rmepsilon.h" />
+    <ClInclude Include="src\include\fst\rmfinalepsilon.h" />
+    <ClInclude Include="src\include\fst\script\arcsort.h" />
+    <ClInclude Include="src\include\fst\script\arg-packs.h" />
+    <ClInclude Include="src\include\fst\script\closure.h" />
+    <ClInclude Include="src\include\fst\script\compile-impl.h" />
+    <ClInclude Include="src\include\fst\script\compile.h" />
+    <ClInclude Include="src\include\fst\script\compose.h" />
+    <ClInclude Include="src\include\fst\script\concat.h" />
+    <ClInclude Include="src\include\fst\script\connect.h" />
+    <ClInclude Include="src\include\fst\script\convert.h" />
+    <ClInclude Include="src\include\fst\script\decode.h" />
+    <ClInclude Include="src\include\fst\script\determinize.h" />
+    <ClInclude Include="src\include\fst\script\difference.h" />
+    <ClInclude Include="src\include\fst\script\disambiguate.h" />
+    <ClInclude Include="src\include\fst\script\draw-impl.h" />
+    <ClInclude Include="src\include\fst\script\draw.h" />
+    <ClInclude Include="src\include\fst\script\encode.h" />
+    <ClInclude Include="src\include\fst\script\epsnormalize.h" />
+    <ClInclude Include="src\include\fst\script\equal.h" />
+    <ClInclude Include="src\include\fst\script\equivalent.h" />
+    <ClInclude Include="src\include\fst\script\fst-class.h" />
+    <ClInclude Include="src\include\fst\script\fstscript-decl.h" />
+    <ClInclude Include="src\include\fst\script\fstscript.h" />
+    <ClInclude Include="src\include\fst\script\info-impl.h" />
+    <ClInclude Include="src\include\fst\script\info.h" />
+    <ClInclude Include="src\include\fst\script\intersect.h" />
+    <ClInclude Include="src\include\fst\script\invert.h" />
+    <ClInclude Include="src\include\fst\script\isomorphic.h" />
+    <ClInclude Include="src\include\fst\script\map.h" />
+    <ClInclude Include="src\include\fst\script\minimize.h" />
+    <ClInclude Include="src\include\fst\script\print-impl.h" />
+    <ClInclude Include="src\include\fst\script\print.h" />
+    <ClInclude Include="src\include\fst\script\project.h" />
+    <ClInclude Include="src\include\fst\script\prune.h" />
+    <ClInclude Include="src\include\fst\script\push.h" />
+    <ClInclude Include="src\include\fst\script\randequivalent.h" />
+    <ClInclude Include="src\include\fst\script\randgen.h" />
+    <ClInclude Include="src\include\fst\script\register.h" />
+    <ClInclude Include="src\include\fst\script\relabel.h" />
+    <ClInclude Include="src\include\fst\script\replace.h" />
+    <ClInclude Include="src\include\fst\script\reverse.h" />
+    <ClInclude Include="src\include\fst\script\reweight.h" />
+    <ClInclude Include="src\include\fst\script\rmepsilon.h" />
+    <ClInclude Include="src\include\fst\script\script-impl.h" />
+    <ClInclude Include="src\include\fst\script\shortest-distance.h" />
+    <ClInclude Include="src\include\fst\script\shortest-path.h" />
+    <ClInclude Include="src\include\fst\script\symbols.h" />
+    <ClInclude Include="src\include\fst\script\synchronize.h" />
+    <ClInclude Include="src\include\fst\script\text-io.h" />
+    <ClInclude Include="src\include\fst\script\topsort.h" />
+    <ClInclude Include="src\include\fst\script\union.h" />
+    <ClInclude Include="src\include\fst\script\verify.h" />
+    <ClInclude Include="src\include\fst\script\weight-class.h" />
+    <ClInclude Include="src\include\fst\shortest-distance.h" />
+    <ClInclude Include="src\include\fst\shortest-path.h" />
+    <ClInclude Include="src\include\fst\signed-log-weight.h" />
+    <ClInclude Include="src\include\fst\sparse-power-weight.h" />
+    <ClInclude Include="src\include\fst\sparse-tuple-weight.h" />
+    <ClInclude Include="src\include\fst\state-map.h" />
+    <ClInclude Include="src\include\fst\state-reachable.h" />
+    <ClInclude Include="src\include\fst\state-table.h" />
+    <ClInclude Include="src\include\fst\statesort.h" />
+    <ClInclude Include="src\include\fst\string-weight.h" />
+    <ClInclude Include="src\include\fst\string.h" />
+    <ClInclude Include="src\include\fst\symbol-table-ops.h" />
+    <ClInclude Include="src\include\fst\symbol-table.h" />
+    <ClInclude Include="src\include\fst\synchronize.h" />
+    <ClInclude Include="src\include\fst\test-properties.h" />
+    <ClInclude Include="src\include\fst\topsort.h" />
+    <ClInclude Include="src\include\fst\tuple-weight.h" />
+    <ClInclude Include="src\include\fst\types.h" />
+    <ClInclude Include="src\include\fst\union-find.h" />
+    <ClInclude Include="src\include\fst\union-weight.h" />
+    <ClInclude Include="src\include\fst\union.h" />
+    <ClInclude Include="src\include\fst\util.h" />
+    <ClInclude Include="src\include\fst\vector-fst.h" />
+    <ClInclude Include="src\include\fst\verify.h" />
+    <ClInclude Include="src\include\fst\visit.h" />
+    <ClInclude Include="src\include\fst\weight.h" />
+    <ClInclude Include="src\test\algo_test.h" />
+    <ClInclude Include="src\test\fst_test.h" />
+    <ClInclude Include="src\test\weight-tester.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

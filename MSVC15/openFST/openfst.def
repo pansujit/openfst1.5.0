@@ -1,0 +1,18 @@
+LIBRARY
+EXPORTS
+    PropertyNames DATA
+	FLAGS_save_relabel_ipairs DATA
+    FLAGS_save_relabel_opairs DATA
+    FLAGS_fst_verify_properties DATA
+    FLAGS_fst_weight_separator DATA
+    FLAGS_fst_weight_parentheses DATA
+    FLAGS_fst_default_cache_gc_limit DATA
+    FLAGS_save_relabel_ipairs DATA
+    FLAGS_save_relabel_opairs	DATA
+    FLAGS_help DATA
+    FLAGS_tmpdir DATA
+    FLAGS_fst_compat_symbols DATA
+    FLAGS_fst_field_separator DATA
+    FLAGS_fst_default_cache_gc DATA
+    FLAGS_fst_align DATA
+    FLAGS_fst_error_fatal CONSTANT
