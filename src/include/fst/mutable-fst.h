@@ -34,7 +34,7 @@ using std::vector;
 
 namespace fst {
 
-template <class A> struct MutableArcIteratorData;
+template <class A> class MutableArcIteratorData;
 
 // An expanded FST plus mutators (use MutableArcIterator to modify arcs).
 template <class A>

@@ -172,9 +172,9 @@ void Relabel(MutableFst<A> *fst,
     size_t num_missing_syms = 0;
     for (SymbolTableIterator syms_iter(*old_osymbols); !syms_iter.Done();
          syms_iter.Next()) {
-      const string osymbol = syms_iter.Symbol();
-      const int osymbol_val = syms_iter.Value();
-      const int new_osymbol_val = new_osymbols->Find(osymbol);
+       string osymbol = syms_iter.Symbol();
+       int osymbol_val = syms_iter.Value();
+       int new_osymbol_val = new_osymbols->Find(osymbol);
       if (new_osymbol_val == kNoLabel) {
         VLOG(1) << "Output symbol id " << osymbol_val << " symbol '"
                 << osymbol << "' missing from target symbol table.";

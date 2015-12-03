@@ -81,6 +81,8 @@ void OPENFSTDLL FailedNewHandler();
 namespace fst {
 
 using namespace std;
+void OPENFSTDLL SplitToVector(char *line, const char *delim, //ChangedPD
+                   std::vector<char *> *vec, bool omit_empty_strings);
 
 // Downcasting
 template<typename To, typename From>

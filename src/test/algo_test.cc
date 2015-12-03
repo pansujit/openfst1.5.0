@@ -63,6 +63,10 @@ using fst::PowerWeightGenerator;
 
 using fst::AlgoTester;
 
+namespace fst {
+	const int MappedFile::kArchAlignment = 16;
+}
+
 int main(int argc, char **argv) {
 	FLAGS_fst_verify_properties = true;
 	std::set_new_handler(FailedNewHandler);

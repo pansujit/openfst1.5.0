@@ -172,8 +172,8 @@ class RelationDeterminizeFilter {
   const StateTuple *tuple_;      // Current tuple
   bool is_final_;                // Is the current head state final?
   vector<StateId> *head_;        // Head state for a given state.
-
-  void operator=(const RelationDeterminizeFilter<Arc, R> &filt);  // disallow
+  DISALLOW_COPY_AND_ASSIGN(RelationDeterminizeFilter);
+//  void operator=(const RelationDeterminizeFilter<Arc, R> &filt);  // disallow
 };
 
 template <class Arc, class R> bool
@@ -422,7 +422,7 @@ Disambiguator<Arc>::PreDisambiguate(const ExpandedFst<Arc> &ifst,
   nopts.gc_limit = 0;  // Cache only the last state for fastest copy.
   if (opts.weight_threshold != Weight::Zero() ||
       opts.state_threshold != kNoStateId) {
-    /* TODO(riley): fails regression test; understand why
+   //TODO(riley): fails regression test; understand why
     if (ifst.Properties(kAcceptor, true)) {
       vector<Weight> idistance, odistance;
       ShortestDistance(ifst, &idistance, true);
@@ -432,7 +432,7 @@ Disambiguator<Arc>::PreDisambiguate(const ExpandedFst<Arc> &ifst,
                                                    AnyArcFilter<Arc>(),
                                                    &odistance);
       Prune(dfst, ofst, popts);
-      } else */ {
+      } else  {
       *ofst = DeterminizeFst<Arc>(ifst, nopts);
       Prune(ofst, opts.weight_threshold, opts.state_threshold);
     }

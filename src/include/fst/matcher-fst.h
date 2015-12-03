@@ -18,8 +18,8 @@
 // \file
 // Class to add a matcher to an FST.
 
-#ifndef FST_LIB_MATCHER_FST_H__
-#define FST_LIB_MATCHER_FST_H__
+#ifndef FST_LIB_MATCHER_FST_FST_H__
+#define FST_LIB_MATCHER_FST_FST_H__
 
 #include <fst/add-on.h>
 #include <fst/const-fst.h>
@@ -296,7 +296,8 @@ class LookAheadMatcher< MatcherFst<F, M, N, I> > {
  private:
   M *matcher_;
 
-  void operator=(const LookAheadMatcher<FST> &);  // disallow
+  void operator=(const LookAheadMatcher<FST> &);//disallow
+ //DISALLOW_COPY_AND_ASSIGN(LookAheadMatcher<FST> &);
 };
 
 //

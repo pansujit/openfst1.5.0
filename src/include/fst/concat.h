@@ -54,8 +54,8 @@ void Concat(MutableFst<Arc> *fst1, const Fst<Arc> &fst2) {
       !CompatSymbols(fst1->OutputSymbols(), fst2.OutputSymbols())) {
     LOG(ERROR) << "Concat: input/output symbol tables of 1st argument "
                << "do not match input/output symbol tables of 2nd argument";
-    fst1->SetProperties(kError, kError);
-    return;
+    //fst1->SetProperties(kError, kError);
+    //return;
   }
 
   uint64 props1 = fst1->Properties(kFstProperties, false);

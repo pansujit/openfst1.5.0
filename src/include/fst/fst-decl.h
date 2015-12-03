@@ -61,7 +61,7 @@ template <class A, class S = VectorState<A> > class VectorFst;
 
 template <class A> class DefaultCacheStore;
 template <class A, class P = ssize_t> class DefaultReplaceStateTable;
-
+template <class A, class P> class DefaultReplaceStateTable;
 template <class A, class C> class ArcSortFst;
 template <class A> class ClosureFst;
 template <class A, class C = DefaultCacheStore<A> > class ComposeFst;

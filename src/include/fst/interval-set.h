@@ -18,8 +18,8 @@
 // \file
 // Class to represent and operate on sets of intervals.
 
-#ifndef FST_LIB_INTERVAL_SET_H_
-#define FST_LIB_INTERVAL_SET_H_
+#ifndef FST_LIB_INTERVAL_SET_H__
+#define FST_LIB_INTERVAL_SET_H__
 
 #include <iostream>
 #include <vector>

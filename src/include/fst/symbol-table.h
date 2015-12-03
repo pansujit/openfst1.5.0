@@ -63,7 +63,6 @@ struct SymbolTableReadOptions {
 
 struct SymbolTableTextOptions {
   OPENFSTDLL SymbolTableTextOptions();
-
   bool allow_negative;
   string fst_field_separator;
 };
@@ -207,7 +206,7 @@ class SymbolTableImpl {
   // computation (i.e., if check_sum_finalized_ is false).
   // Takes ~2.5 microseconds (dbg) or ~230 nanoseconds (opt) on a 2.67GHz Xeon
   // if the checksum is up-to-date (requiring no recomputation).
-  void MaybeRecomputeCheckSum() const;
+  void OPENFSTDLL MaybeRecomputeCheckSum() const;
 
   string name_;
   int64 available_key_;

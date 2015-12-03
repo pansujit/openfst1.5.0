@@ -60,7 +60,7 @@ class MappedFile {
   // the memorymap bool is advisory, and Map will default to allocating and
   // reading.  source needs to contain the filename that was used to open
   // the istream.
-  static MappedFile* Map(istream* s, bool memorymap, const string& source,
+  static OPENFSTDLL MappedFile* Map(istream* s, bool memorymap, const string& source,
                          size_t size);
 
   // Creates a MappedFile object with a new[]'ed block of memory of size.
@@ -72,12 +72,11 @@ class MappedFile {
   // This block of memory is not owned by the MappedFile object and will not
   // be freed.
   // RECOMMENDED FOR INTERNAL USE ONLY, may change in future releases.
-  static MappedFile* Borrow(void *data);
-
-  static OPENFSTDLL const int kArchAlignment;
+ static OPENFSTDLL MappedFile* Borrow(void *data);
+  static const int kArchAlignment;
 
  private:
-  explicit MappedFile(const MemoryRegion &region);
+  explicit OPENFSTDLL MappedFile(const MemoryRegion &region);
 
   MemoryRegion region_;
   DISALLOW_COPY_AND_ASSIGN(MappedFile);

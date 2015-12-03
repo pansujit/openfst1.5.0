@@ -27,7 +27,7 @@
 #include "./weight-tester.h"
 
 DEFINE_int32(seed, -1, "random seed");
-DEFINE_int32(repeat, 10000, "number of test repetitions");
+DEFINE_int32(repeat, 100000, "number of test repetitions");
 
 using fst::TropicalWeight;
 using fst::TropicalWeightGenerator;

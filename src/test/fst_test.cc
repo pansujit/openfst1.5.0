@@ -24,9 +24,11 @@
 #include <fst/const-fst.h>
 #include <fst/edit-fst.h>
 #include <fst/matcher-fst.h>
-
+#include <fst/mapped-file.h>
 
 namespace fst {
+	const int MappedFile::kArchAlignment = 16;
+	extern const char arc_lookahead_fst_type[] = "arc_lookahead";
 
 // A user-defined arc type.
 struct CustomArc {

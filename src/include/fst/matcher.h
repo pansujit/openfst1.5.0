@@ -968,7 +968,7 @@ private:
   virtual Weight Final_(StateId s) const { return Final(s); }
   virtual ssize_t Priority_(StateId s) { return Priority(s); }
 
-  mutable M *matcher_;
+  M *matcher_;
   MatchType match_type_;  // Type of match requested
   Label phi_label_;       // Label that represents the phi transition
   bool rewrite_both_;     // Rewrite both sides when both are 'phi_label_'

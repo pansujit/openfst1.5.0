@@ -1,0 +1,25 @@
+The OpenFST test has been compiled and in the good condition with a little modification using
+Visual Studio 2015 on windows OS.
+
+There has been two problem in "fst_test"
+1. fst_test.obj : error LNK2001: unresolved external symbol "char const * const fst::arc_lookahead_fst_type"
+ (?arc_lookahead_fst_type@fst@@3QBDB)
+2. fst_test.obj : error LNK2019: unresolved external symbol "public: static class fst::MappedFile * 
+
+ The first one is coming from "extern" constant which is solved by defining the arc_lookhead_fst_type in 
+the fst_test.cc and  including the header file that have been declared.
+ 
+ The second problem is coming from the static declaration which also solved by using the same technique as the extern.
+ 
+ The after confgure well visual studio 2015, there is only one problem in the "algotest", is about
+ "propertynames".
+ This problem is solved by using def file with propertynames  "CONSTANT" inspite of "DATA".
+ 
+ In the visual studio 2015, I need to insert "OPENFSTEXPORT" in prepocessor of c/c++ compiler and also
+ in liner explictly define "openfst-gd.lib"(my output libraby name) in the additional dependecies.
+ 
+ All gone Well
+ 
+ Thank you
+
+ 

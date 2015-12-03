@@ -143,19 +143,23 @@
       <PreprocessorDefinitions>WIN32;OPENFSTEXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DisableLanguageExtensions>false</DisableLanguageExtensions>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>openfst.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalOptions> /ignore:4006 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -269,6 +273,11 @@
     <ClCompile Include="..\..\src\extensions\const\const16-fst.cc" />
     <ClCompile Include="..\..\src\extensions\const\const64-fst.cc" />
     <ClCompile Include="..\..\src\extensions\const\const8-fst.cc" />
+    <ClCompile Include="..\..\src\extensions\far\farscript.cc" />
+    <ClCompile Include="..\..\src\extensions\far\main.cc" />
+    <ClCompile Include="..\..\src\extensions\far\stlist.cc" />
+    <ClCompile Include="..\..\src\extensions\far\strings.cc" />
+    <ClCompile Include="..\..\src\extensions\far\sttable.cc" />
     <ClCompile Include="..\..\src\extensions\linear\linear-classifier-fst.cc" />
     <ClCompile Include="..\..\src\extensions\linear\linear-tagger-fst.cc" />
     <ClCompile Include="..\..\src\extensions\linear\linearscript.cc" />
@@ -335,8 +344,6 @@
   <ItemGroup>
     <None Include="..\..\src\include\fst\unordered_map" />
     <None Include="..\..\src\include\fst\unordered_set" />
-    <None Include="..\..\src\script\Makefile.am" />
-    <None Include="..\..\src\script\Makefile.in" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\include\fst\accumulator.h" />

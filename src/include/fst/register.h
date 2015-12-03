@@ -96,7 +96,7 @@ class FstRegisterer
           F().Type(), BuildEntry()) {  }
 
  private:
-  static Entry BuildEntry() {
+  Entry BuildEntry() {
     F *(*reader)(istream &strm,
                  const FstReadOptions &opts) = &F::Read;
 

@@ -20,8 +20,8 @@
 // read/write method to an FST and its file rep. The FST is given a
 // new type name.
 
-#ifndef FST_LIB_ADD_ON_H_
-#define FST_LIB_ADD_ON_H_
+#ifndef FST_LIB_ADD_ON_H__
+#define FST_LIB_ADD_ON_H__
 
 #include <stddef.h>
 #include <string>

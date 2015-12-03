@@ -716,12 +716,12 @@ class CompactFstImpl : public CacheImpl<A> {
 
   template <class Iterator>
   void SetCompactElements(const Iterator &b, const Iterator &e) {
-    SetProperties(kStaticProperties | compactor_->Properties());
+    //SetProperties(kStaticProperties | compactor_->Properties());
     if (data_ && !data_->DecrRefCount())
       delete data_;
     data_ = new DataStorage(b, e, *compactor_);
-    if (data_->Error())
-      SetProperties(kError, kError);
+   // if (data_->Error())
+     // SetProperties(kError, kError);
   }
 
   C *GetCompactor() const { return compactor_; }

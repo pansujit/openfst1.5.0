@@ -27,10 +27,8 @@
 #include <sys/types.h>
 #include <cmath>
 #include <string>
-
 #include <fst/compat.h>
 #include <fst/types.h>
-
 #include <fst/arc.h>
 #include <fst/memory.h>
 #include <fst/properties.h>
@@ -49,8 +47,8 @@ namespace fst {
 bool OPENFSTDLL IsFstHeader(istream &, const string &);
 
 class FstHeader;
-template <class A> struct StateIteratorData;
-template <class A> struct ArcIteratorData;
+template <class A> class StateIteratorData;
+template <class A> class ArcIteratorData;
 template <class A> class MatcherBase;
 
 struct FstReadOptions {
@@ -75,12 +73,12 @@ struct FstReadOptions {
                           const SymbolTable* isym = 0,
                           const SymbolTable* osym = 0);
 
-  explicit FstReadOptions(const string& src,
+  explicit OPENFSTDLL FstReadOptions(const string& src,
                           const SymbolTable* isym,
                           const SymbolTable* osym = 0);
 
   // Helper function to convert strings FileReadModes into their enum value.
-  static FileReadMode ReadMode(const string &mode);
+  static OPENFSTDLL FileReadMode ReadMode(const string &mode);
 
   // Outputs a debug string for the FstReadOptions object.
   string DebugString() const;

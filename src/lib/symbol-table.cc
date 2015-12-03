@@ -124,7 +124,7 @@ void SymbolTableImpl::MaybeRecomputeCheckSum() const {
 
 int64 SymbolTableImpl::AddSymbol(const string& symbol, int64 key) {
   if (key == -1) return key;
-  const pair<int64, bool>& insert_key = symbols_.InsertOrFind(symbol);
+  const pair<int, bool>& insert_key = symbols_.InsertOrFind(symbol);
   if (!insert_key.second) {
     int64 key_already = GetNthKey(insert_key.first);
     if (key_already == key) return key;
@@ -201,7 +201,7 @@ bool SymbolTableImpl::Write(ostream &strm) const {
   return true;
 }
 
-const OPENFSTDLL int64 SymbolTable::kNoSymbol;
+//const OPENFSTDLL int64 SymbolTable::kNoSymbol;
 
 void SymbolTable::AddTable(const SymbolTable& table) {
   MutateCheck();

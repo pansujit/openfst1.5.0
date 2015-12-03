@@ -25,11 +25,10 @@
 #include <fst/matcher.h>
 #include <fst/vector-fst.h>
 #include <fst/verify.h>
-
 DECLARE_string(tmpdir);
 
 namespace fst {
-
+	extern const char arc_lookahead_fst_type[];
 // This tests an Fst F that is assumed to have a copy method from an
 // arbitrary Fst. Some test functions make further assumptions mostly
 // obvious from their name. These tests are written as member temple

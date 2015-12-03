@@ -31,209 +31,20 @@
     <Filter Include="Source Files\lookahead">
       <UniqueIdentifier>{b4284d49-96d0-4310-9341-d0a9ba88ff22}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\compress">
+    <Filter Include="Source Files\far">
       <UniqueIdentifier>{55722c98-1896-4813-b507-83928783122a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\script">
+      <UniqueIdentifier>{768fbe7f-015a-41f5-bede-51a44dcfd14b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\library">
+      <UniqueIdentifier>{af0a4ce0-fdea-4a63-9c33-708a47b1767c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\compact">
+      <UniqueIdentifier>{ce53def9-a637-418a-8798-69d7c0dfcc86}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\extensions\compact\compact16_acceptor-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact16_string-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact16_unweighted-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact16_unweighted_acceptor-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact16_weighted_string-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact64_acceptor-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact64_string-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact64_unweighted-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact64_unweighted_acceptor-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact64_weighted_string-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact8_acceptor-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact8_string-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact8_unweighted-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact8_unweighted_acceptor-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\extensions\compact\compact8_weighted_string-fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\arcsort.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\closure.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\compile.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\compose.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\concat.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\connect.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\convert.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\decode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\determinize.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\difference.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\disambiguate.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\draw.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\encode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\epsnormalize.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\equal.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\equivalent.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\fst-class.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\info.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\intersect.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\invert.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\isomorphic.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\map.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\minimize.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\print.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\project.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\prune.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\push.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\randequivalent.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\randgen.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\relabel.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\replace.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\reverse.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\reweight.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\rmepsilon.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\script-impl.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\shortest-distance.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\shortest-path.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\synchronize.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\text-io.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\topsort.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\union.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\verify.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\script\weight-class.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\lib\compat.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\lib\flags.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\lib\fst.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\lib\mapped-file.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\lib\properties.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\lib\symbol-table.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\lib\symbol-table-ops.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\lib\util.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\extensions\const\const8-fst.cc">
       <Filter>Source Files\constant</Filter>
     </ClCompile>
@@ -276,16 +87,223 @@
     <ClCompile Include="..\..\src\extensions\lookahead\olabel_lookahead-fst.cc">
       <Filter>Source Files\lookahead</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\extensions\far\farscript.cc">
+      <Filter>Source Files\far</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\far\main.cc">
+      <Filter>Source Files\far</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\far\stlist.cc">
+      <Filter>Source Files\far</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\far\strings.cc">
+      <Filter>Source Files\far</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\far\sttable.cc">
+      <Filter>Source Files\far</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\arcsort.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\closure.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\compile.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\compose.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\concat.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\connect.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\convert.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\decode.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\determinize.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\difference.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\disambiguate.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\draw.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\encode.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\epsnormalize.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\equal.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\equivalent.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\fst-class.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\info.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\intersect.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\invert.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\isomorphic.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\map.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\minimize.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\print.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\project.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\prune.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\push.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\randequivalent.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\randgen.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\relabel.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\replace.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\reverse.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\reweight.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\rmepsilon.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\script-impl.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\shortest-distance.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\shortest-path.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\synchronize.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\text-io.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\topsort.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\union.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\verify.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\weight-class.cc">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lib\compat.cc">
+      <Filter>Source Files\library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lib\flags.cc">
+      <Filter>Source Files\library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lib\fst.cc">
+      <Filter>Source Files\library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lib\mapped-file.cc">
+      <Filter>Source Files\library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lib\properties.cc">
+      <Filter>Source Files\library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lib\symbol-table.cc">
+      <Filter>Source Files\library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lib\symbol-table-ops.cc">
+      <Filter>Source Files\library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lib\util.cc">
+      <Filter>Source Files\library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact8_acceptor-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact8_string-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact8_unweighted_acceptor-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact8_unweighted-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact8_weighted_string-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact16_acceptor-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact16_string-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact16_unweighted_acceptor-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact16_unweighted-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact16_weighted_string-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact64_acceptor-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact64_string-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact64_unweighted_acceptor-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact64_unweighted-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extensions\compact\compact64_weighted_string-fst.cc">
+      <Filter>Source Files\compact</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\src\include\fst\unordered_map" />
     <None Include="..\..\src\include\fst\unordered_set" />
-    <None Include="..\..\src\script\Makefile.am">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="..\..\src\script\Makefile.in">
-      <Filter>Source Files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\include\fst\accumulator.h">
